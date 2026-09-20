@@ -1,0 +1,7 @@
+# domínio www → sem www
+https://www.nutriciclos.com.br/*  https://nutriciclos.com.br/:splat  301!
+# endereços antigos/alternativos
+/sobre-nos        /sobre/          301
+/a-nutricionista  /nutricionista/  301
+/servicos.html    /servicos/       301
+/contato.html     /contato/        301
