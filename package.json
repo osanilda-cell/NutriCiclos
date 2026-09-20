@@ -1,0 +1,14 @@
+{
+  "name": "nutriciclos-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site da NutriCiclos — Clínica de Nutrição",
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "preview": "npx serve dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
