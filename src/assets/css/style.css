@@ -675,9 +675,9 @@ button { font: inherit; color: inherit; }
    ========================================================================== */
 .hero__note { margin-top: 22px; font-size: 14.5px; color: var(--ink-3); }
 
-.wheel__dash--thyroid { stroke: rgba(180, 99, 58, .45); stroke-width: 1.5; stroke-dasharray: 4 7; }
-.wheel__thyroid text { font-family: var(--sans); font-size: 15px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; fill: var(--copper); }
-.wheel__thyroid .wheel__thyroid-sm { font-size: 13.5px; letter-spacing: .1em; }
+.wheel__thyroid text { font-family: var(--sans); font-size: 13px; font-weight: 600; text-transform: uppercase; fill: var(--copper); opacity: .8; }
+.wheel__thyroid { transform-origin: 300px 300px; animation: spin 90s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .wheel__thyroid { animation: none; } }
 .phase__more { margin-top: 24px; }
 @media (max-width: 900px) { .phase__more { justify-content: center; margin-top: 14px; } }
 @media (max-width: 900px) and (max-height: 720px) { .phase__more { display: none; } }

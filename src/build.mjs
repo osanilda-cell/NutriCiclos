@@ -491,15 +491,10 @@ pages.push({
     <div class="container cycles__grid">
       <div class="wheel">
         <svg viewBox="-95 -12 790 624" role="img" aria-label="Roda das quatro fases da menopausa, cercada pelas alterações tireoidianas: hipotireoidismo (Hashimoto) e hipertireoidismo (Graves)">
-          <defs>
-            <path id="thy-top" d="${arc(300, 300, 244, -82, -8, 1)}"/>
-            <path id="thy-left" d="${arc(300, 300, 256, 179, 93, 0)}"/>
-            <path id="thy-right" d="${arc(300, 300, 256, 87, 1, 0)}"/>
-          </defs>
-          <circle class="wheel__dash wheel__dash--thyroid" cx="300" cy="300" r="268"/>
+          <defs><path id="thy-ring" d="M300 300 m-256 0 a256 256 0 1 1 512 0 a256 256 0 1 1 -512 0"/></defs>
           <circle class="wheel__track" cx="300" cy="300" r="230"/>
           <circle class="wheel__progress" cx="300" cy="300" r="230" transform="rotate(-90 300 300)"/>
-          <g class="wheel__thyroid"><text><textPath href="#thy-top" startOffset="50%" text-anchor="middle">Alterações tireoidianas</textPath></text><text class="wheel__thyroid-sm"><textPath href="#thy-left" startOffset="50%" text-anchor="middle">Hipotireoidismo – Hashimoto</textPath></text><text class="wheel__thyroid-sm"><textPath href="#thy-right" startOffset="50%" text-anchor="middle">Hipertireoidismo – Graves</textPath></text></g>
+          <g class="wheel__thyroid"><text><textPath href="#thy-ring" textLength="1580">Alterações tireoidianas · Hipotireoidismo – Hashimoto · Hipertireoidismo – Graves ·</textPath></text></g>
           ${PHASES.map((ph, i) => {
             const a = (-90 + i * (360 / PHASES.length)) * Math.PI / 180;
             const x = 300 + 230 * Math.cos(a), y = 300 + 230 * Math.sin(a);
