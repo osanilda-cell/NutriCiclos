@@ -524,7 +524,8 @@ pages.push({
         </article>`).join("")}
       </div>
       <aside class="cycles__thyroid cycles__thyroid--side" aria-label="Menopausa e tireoide">
-        <p class="phase__kicker">Menopausa e tireoide</p>
+        <p class="phase__kicker">Em todas as fases</p>
+        <h3 class="cycles__thyroid-title">Menopausa e <em>tireoide</em></h3>
         <p>As alterações da tireoide, como o hipotireoidismo (Hashimoto) e o hipertireoidismo (Graves), são frequentes nesta fase da vida e muitas vezes se confundem com os sintomas da menopausa. Por isso merecem atenção especial em todas as fases: aqui, a avaliação inclui sempre a tireoide.</p>
         <a class="link-arrow" href="#tireoide">É menopausa ou é tireoide? ${I.arrow}</a>
       </aside>
