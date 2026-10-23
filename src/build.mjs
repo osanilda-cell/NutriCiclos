@@ -485,15 +485,27 @@ pages.push({
     <div class="section-head">
       <p class="eyebrow" data-reveal>As fases da menopausa</p>
       <h2 class="h2" id="ciclos-title" data-split>Seus hormônios mudam em <em>etapas</em>. Sua alimentação também.</h2>
+      <p class="cycles__thyroid cycles__thyroid--intro" data-reveal><strong>Menopausa e tireoide.</strong> As alterações da tireoide, como o hipotireoidismo (Hashimoto) e o hipertireoidismo (Graves), são frequentes nesta fase da vida e muitas vezes se confundem com os sintomas da menopausa. Por isso merecem atenção especial em todas as fases: aqui, a avaliação inclui sempre a tireoide.</p>
     </div>
   </div>
   <div class="cycles__stage">
     <div class="container cycles__grid">
       <div class="wheel">
-        <svg viewBox="-95 -40 790 690" role="img" aria-label="Roda das quatro fases da menopausa">
+        <svg viewBox="-95 -12 790 624" role="img" aria-label="Dois círculos, um dentro do outro: no de fora, as quatro fases da menopausa; no de dentro, as alterações da tireoide, hipotireoidismo (Hashimoto) e hipertireoidismo (Graves)">
           <circle class="wheel__dash" cx="300" cy="300" r="268"/>
           <circle class="wheel__track" cx="300" cy="300" r="230"/>
           <circle class="wheel__progress" cx="300" cy="300" r="230" transform="rotate(-90 300 300)"/>
+          <g class="wheel__thy">
+            <circle class="wheel__thy-disc" cx="300" cy="300" r="168"/>
+            <path class="wheel__thy-arc wheel__thy-arc--hipo" d="${arc(300, 300, 168, 192, 348, 1)}"/>
+            <path class="wheel__thy-arc wheel__thy-arc--hiper" d="${arc(300, 300, 168, 12, 168, 1)}"/>
+            <circle class="wheel__thy-dot" cx="300" cy="132" r="6"/>
+            <circle class="wheel__thy-dot wheel__thy-dot--hiper" cx="300" cy="468" r="6"/>
+            <text class="wheel__thy-name" x="300" y="182" text-anchor="middle">Hipotireoidismo</text>
+            <text class="wheel__thy-sub" x="300" y="208" text-anchor="middle">Hashimoto</text>
+            <text class="wheel__thy-name" x="300" y="410" text-anchor="middle">Hipertireoidismo</text>
+            <text class="wheel__thy-sub" x="300" y="436" text-anchor="middle">Graves</text>
+          </g>
           ${PHASES.map((ph, i) => {
             const a = (-90 + i * (360 / PHASES.length)) * Math.PI / 180;
             const x = 300 + 230 * Math.cos(a), y = 300 + 230 * Math.sin(a);
@@ -521,44 +533,31 @@ pages.push({
           <a class="link-arrow phase__more" href="${ph.slug}/">Entenda a ${ph.n.toLowerCase()} ${I.arrow}</a>
         </article>`).join("")}
       </div>
+      <aside class="cycles__thyroid cycles__thyroid--side" aria-label="Menopausa e tireoide">
+        <p class="phase__kicker">Em todas as fases</p>
+        <h3 class="cycles__thyroid-title">Menopausa e <em>tireoide</em></h3>
+        <p>As alterações da tireoide, como o hipotireoidismo (Hashimoto) e o hipertireoidismo (Graves), são frequentes nesta fase da vida e muitas vezes se confundem com os sintomas da menopausa. Por isso merecem atenção especial em todas as fases: aqui, a avaliação inclui sempre a tireoide.</p>
+        <a class="link-arrow" href="#tireoide">É menopausa ou é tireoide? ${I.arrow}</a>
+      </aside>
       </div>
     </div>
     <div class="cycles__progress" aria-hidden="true"><i></i></div>
   </div>
 </section>
 
-<section class="section section--sand thy" id="tireoide" aria-labelledby="thy-title">
+<section class="section section--sand" id="tireoide" aria-labelledby="thy-title">
   <div class="container">
-    <div class="thy__grid">
-      <div class="wheel wheel--thyroid" data-reveal>
-        <svg viewBox="-95 -40 790 690" role="img" aria-label="Círculo das alterações da tireoide: hipotireoidismo (Hashimoto) e hipertireoidismo (Graves)">
-          <circle class="wheel__dash" cx="300" cy="300" r="268"/>
-          <circle class="wheel__track" cx="300" cy="300" r="230"/>
-          <path class="thy__arc thy__arc--hipo" d="${arc(300, 300, 230, 186, 354, 1)}"/>
-          <path class="thy__arc thy__arc--hiper" d="${arc(300, 300, 230, 6, 174, 1)}"/>
-          <g class="wheel__node is-active"><circle cx="300" cy="70" r="9"/><text x="300" y="2" text-anchor="middle">Hipotireoidismo</text><text class="thy__sub" x="300" y="40" text-anchor="middle">Hashimoto</text></g>
-          <g class="wheel__node is-active"><circle cx="300" cy="530" r="9"/><text x="300" y="585" text-anchor="middle">Hipertireoidismo</text><text class="thy__sub" x="300" y="624" text-anchor="middle">Graves</text></g>
-        </svg>
-        <div class="wheel__center">
-          <img src="assets/img/emblem-copper.svg" alt="" loading="lazy">
-          <p class="wheel__num thy__center">Tireoide<small>alterações</small></p>
-        </div>
-      </div>
-      <div class="thy__side">
-        <p class="eyebrow" data-reveal>Menopausa e tireoide</p>
-        <h2 class="h2" id="thy-title" data-split>É menopausa ou é <em>tireoide</em>?</h2>
-        <p class="thy__lead" data-reveal>As alterações da tireoide, como o hipotireoidismo (Hashimoto) e o hipertireoidismo (Graves), são frequentes nesta fase da vida e muitas vezes se confundem com os sintomas da menopausa. Por isso merecem atenção especial em todas as fases: aqui, a avaliação inclui sempre a tireoide.</p>
-        <div class="thy__items">
-          <article data-reveal><p class="phase__kicker">Hipotireoidismo · Hashimoto</p><p>A tireoide produz menos hormônio: cansaço, ganho de peso, frio e queda de cabelo. A nutrição cuida do horário da levotiroxina, longe do café, do cálcio e do ferro, e de selênio, iodo, ferro e vitamina D na medida certa.</p><a class="link-arrow" href="tireoide/hipotireoidismo/">Hipotireoidismo e Hashimoto ${I.arrow}</a></article>
-          <article data-reveal><p class="phase__kicker">Hipertireoidismo · Graves</p><p>A tireoide produz hormônio demais: calor, palpitações, ansiedade e perda de peso. A nutrição protege músculos e ossos e cuida do excesso de iodo e de cafeína.</p><a class="link-arrow" href="tireoide/doenca-de-graves/">Hipertireoidismo e Graves ${I.arrow}</a></article>
-        </div>
-      </div>
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Tireoide e menopausa</p>
+      <h2 class="h2" id="thy-title" data-split>É menopausa ou é <em>tireoide</em>?</h2>
+      <p class="muted" data-reveal>As alterações tireoidianas, como a doença de Hashimoto (hipotireoidismo) e a doença de Graves (hipertireoidismo), aparecem com frequência na mesma idade da transição para a menopausa, e os sintomas se misturam. Por isso, na NutriCiclos, a avaliação inclui sempre a tireoide.</p>
     </div>
-    <div class="thy__compare">
-      <p class="eyebrow" data-reveal>Sintomas que se confundem</p>
-      ${compareHtml()}
-      <p class="notice" data-reveal>O cuidado nutricional funciona junto com o tratamento do endocrinologista e não substitui o acompanhamento médico.</p>
+    ${compareHtml()}
+    <div class="thy-help">
+      <article class="commit__item" data-reveal><h3>No hipotireoidismo</h3><p>Horário certo da levotiroxina, longe do café, do cálcio e do ferro. Selênio e iodo na medida certa, sem excesso. Ferro e vitamina D, que costumam estar baixos.</p><a class="link-arrow" href="tireoide/hipotireoidismo/">Hipotireoidismo e Hashimoto ${I.arrow}</a></article>
+      <article class="commit__item" data-reveal><h3>No hipertireoidismo</h3><p>Proteína e energia suficientes para não perder músculo. Proteção dos ossos. Cuidado com excesso de iodo e com a cafeína, que piora as palpitações.</p><a class="link-arrow" href="tireoide/doenca-de-graves/">Hipertireoidismo e Graves ${I.arrow}</a></article>
     </div>
+    <p class="notice" data-reveal>O cuidado nutricional funciona junto com o tratamento do endocrinologista e não substitui o acompanhamento médico.</p>
   </div>
 </section>
 
