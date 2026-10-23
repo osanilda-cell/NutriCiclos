@@ -491,29 +491,23 @@ pages.push({
   <div class="cycles__stage">
     <div class="container cycles__grid">
       <div class="wheel">
-        <svg viewBox="-95 -12 790 624" role="img" aria-label="Dois círculos, um dentro do outro: no de fora, as quatro fases da menopausa; no de dentro, as alterações da tireoide, hipotireoidismo (Hashimoto) e hipertireoidismo (Graves)">
-          <circle class="wheel__dash" cx="300" cy="300" r="268"/>
-          <circle class="wheel__track" cx="300" cy="300" r="230"/>
-          <circle class="wheel__progress" cx="300" cy="300" r="230" transform="rotate(-90 300 300)"/>
-          <g class="wheel__thy">
-            <circle class="wheel__thy-disc" cx="300" cy="300" r="168"/>
-            <path class="wheel__thy-arc wheel__thy-arc--hipo" d="${arc(300, 300, 168, 192, 348, 1)}"/>
-            <path class="wheel__thy-arc wheel__thy-arc--hiper" d="${arc(300, 300, 168, 12, 168, 1)}"/>
-            <circle class="wheel__thy-dot" cx="300" cy="132" r="6"/>
-            <circle class="wheel__thy-dot wheel__thy-dot--hiper" cx="300" cy="468" r="6"/>
-            <text class="wheel__thy-name" x="300" y="182" text-anchor="middle">Hipotireoidismo</text>
-            <text class="wheel__thy-sub" x="300" y="208" text-anchor="middle">Hashimoto</text>
-            <text class="wheel__thy-name" x="300" y="410" text-anchor="middle">Hipertireoidismo</text>
-            <text class="wheel__thy-sub" x="300" y="436" text-anchor="middle">Graves</text>
-          </g>
+        <svg viewBox="12 12 576 576" role="img" aria-label="Dois círculos, um dentro do outro: no de fora, as quatro fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa) girando em volta do de dentro, com as alterações da tireoide (hipotireoidismo, Hashimoto, hipertireoidismo e Graves)">
+          <defs>
+            <path id="orbit-phases" d="M300 300 m-222 0 a222 222 0 1 1 444 0 a222 222 0 1 1 -444 0"/>
+            <path id="orbit-thyroid" d="M300 300 m-158 0 a158 158 0 1 1 316 0 a158 158 0 1 1 -316 0"/>
+          </defs>
+          <circle class="wheel__dash" cx="300" cy="300" r="282"/>
+          <circle class="wheel__track" cx="300" cy="300" r="260"/>
+          <circle class="wheel__progress" cx="300" cy="300" r="260" transform="rotate(-90 300 300)"/>
+          <circle class="wheel__band wheel__band--phases" cx="300" cy="300" r="222"/>
+          <g class="wheel__orbit wheel__orbit--phases"><text><textPath href="#orbit-phases" textLength="1385" lengthAdjust="spacing">Pré-menopausa · Perimenopausa · Menopausa · Pós-menopausa ·</textPath></text></g>
+          <circle class="wheel__band wheel__band--thyroid" cx="300" cy="300" r="158"/>
+          <g class="wheel__orbit wheel__orbit--thyroid"><text><textPath href="#orbit-thyroid" textLength="985" lengthAdjust="spacing">Hipotireoidismo · Hashimoto · Hipertireoidismo · Graves ·</textPath></text></g>
+          <circle class="wheel__core" cx="300" cy="300" r="134"/>
           ${PHASES.map((ph, i) => {
             const a = (-90 + i * (360 / PHASES.length)) * Math.PI / 180;
-            const x = 300 + 230 * Math.cos(a), y = 300 + 230 * Math.sin(a);
-            const lx = 300 + 272 * Math.cos(a), ly = 300 + 272 * Math.sin(a);
-            const anchor = Math.abs(Math.cos(a)) < 0.1 ? "middle" : Math.cos(a) > 0 ? "start" : "end";
-            const dy = Math.abs(Math.cos(a)) < 0.1 ? (Math.sin(a) < 0 ? -14 : 30) : 6;
-            const dx = anchor === "start" ? 12 : anchor === "end" ? -12 : 0;
-            return `<g class="wheel__node" tabindex="0" role="button" aria-label="${ph.short}: ${ph.sub}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/><text x="${(lx + dx).toFixed(1)}" y="${(ly + dy).toFixed(1)}" text-anchor="${anchor}">${ph.short}</text></g>`;
+            const x = 300 + 260 * Math.cos(a), y = 300 + 260 * Math.sin(a);
+            return `<g class="wheel__node" tabindex="0" role="button" aria-label="${ph.short}: ${ph.sub}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/></g>`;
           }).join("")}
         </svg>
         <div class="wheel__center">

@@ -675,20 +675,23 @@ button { font: inherit; color: inherit; }
    ========================================================================== */
 .hero__note { margin-top: 22px; font-size: 14.5px; color: var(--ink-3); }
 
-/* Círculo interno: tireoide (dentro do círculo das fases) */
-.wheel__thy-disc { fill: var(--cream); stroke: none; }
-.wheel__thy-arc { fill: none; stroke-width: 3; stroke-linecap: round; }
-.wheel__thy-arc--hipo { stroke: var(--copper); }
-.wheel__thy-arc--hiper { stroke: var(--copper-light); }
-.wheel__thy-dot { fill: var(--copper); }
-.wheel__thy-dot--hiper { fill: var(--copper-light); }
-.wheel__thy-name { font-family: var(--sans); font-size: 15px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; fill: var(--brown); }
-.wheel__thy-sub { font-family: var(--serif); font-style: italic; font-size: 22px; fill: var(--copper); }
+/* Dois anéis com texto: fases da menopausa (fora) orbitando a tireoide (dentro) */
+.wheel__band { fill: none; }
+.wheel__band--phases { stroke: rgba(184, 107, 62, .09); stroke-width: 50; }
+.wheel__band--thyroid { stroke: rgba(184, 107, 62, .17); stroke-width: 46; }
+.wheel__core { fill: var(--cream); }
+.wheel__orbit { transform-origin: 300px 300px; }
+.wheel__orbit text { font-family: var(--sans); font-weight: 700; text-transform: uppercase; dominant-baseline: central; }
+.wheel__orbit--phases { animation: spin 80s linear infinite; }
+.wheel__orbit--phases text { font-size: 19px; fill: var(--copper-deep); }
+.wheel__orbit--thyroid { animation: spin 60s linear infinite reverse; }
+.wheel__orbit--thyroid text { font-size: 16px; fill: var(--brown); }
+@media (prefers-reduced-motion: reduce) { .wheel__orbit { animation: none; } }
 .wheel .wheel__num { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(48px, 6vw, 84px); }
 .wheel .wheel__num small { margin-top: 4px; }
 @media (max-width: 900px) {
-  .wheel__thy-name { font-size: 20px; letter-spacing: .03em; }
-  .wheel__thy-sub { font-size: 26px; }
+  .wheel__orbit--phases text { font-size: 24px; }
+  .wheel__orbit--thyroid text { font-size: 20px; }
   .wheel .wheel__num { font-size: clamp(34px, 9vw, 46px); }
   .wheel .wheel__num small { font-size: 10px; margin-top: 2px; }
 }
