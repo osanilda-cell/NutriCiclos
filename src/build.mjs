@@ -485,6 +485,7 @@ pages.push({
     <div class="section-head">
       <p class="eyebrow" data-reveal>As fases da menopausa</p>
       <h2 class="h2" id="ciclos-title" data-split>Seus hormônios mudam em <em>etapas</em>. Sua alimentação também.</h2>
+      <p class="cycles__thyroid cycles__thyroid--intro" data-reveal><strong>Menopausa e tireoide.</strong> As alterações da tireoide, como o hipotireoidismo (Hashimoto) e o hipertireoidismo (Graves), são frequentes nesta fase da vida e muitas vezes se confundem com os sintomas da menopausa. Por isso merecem atenção especial em todas as fases: aqui, a avaliação inclui sempre a tireoide.</p>
     </div>
   </div>
   <div class="cycles__stage">
@@ -510,6 +511,7 @@ pages.push({
           <p class="wheel__num"><span class="wheel__num-inner">01</span><small>de 0${PHASES.length}</small></p>
         </div>
       </div>
+      <div class="cycles__side">
       <div class="phases">
         ${PHASES.map((ph, i) => `
         <article class="phase" aria-label="${ph.n}">
@@ -520,6 +522,12 @@ pages.push({
           <ul class="phase__tags">${ph.tags.map((t) => `<li>${t}</li>`).join("")}</ul>
           <a class="link-arrow phase__more" href="${ph.slug}/">Entenda a ${ph.n.toLowerCase()} ${I.arrow}</a>
         </article>`).join("")}
+      </div>
+      <aside class="cycles__thyroid cycles__thyroid--side" aria-label="Menopausa e tireoide">
+        <p class="phase__kicker">Menopausa e tireoide</p>
+        <p>As alterações da tireoide, como o hipotireoidismo (Hashimoto) e o hipertireoidismo (Graves), são frequentes nesta fase da vida e muitas vezes se confundem com os sintomas da menopausa. Por isso merecem atenção especial em todas as fases: aqui, a avaliação inclui sempre a tireoide.</p>
+        <a class="link-arrow" href="#tireoide">É menopausa ou é tireoide? ${I.arrow}</a>
+      </aside>
       </div>
     </div>
     <div class="cycles__progress" aria-hidden="true"><i></i></div>
