@@ -13,7 +13,7 @@ export const SITE = {
   fullName: "NutriCiclos — Clínica de Nutrição",
   nutri: "Osana Melo",
   crn: "CRN-10 6463",
-  email: "osanilda@gmail.com",
+  email: "contato@nutriciclos.com.br",
   whatsapp: "5511985469311",          // formato internacional, só números
   whatsappLabel: "(11) 98546-9311",
   waText: "Olá, Osana! Vim pelo site da NutriCiclos e gostaria de agendar uma consulta.",
