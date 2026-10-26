@@ -765,3 +765,32 @@ button { font: inherit; color: inherit; }
   .cycles__thyroid--side p:not(.phase__kicker) { font-size: 15px; margin-bottom: 10px; }
 }
 @media (min-width: 901px) and (max-height: 700px) { .cycles__thyroid--side .link-arrow, .phase__tags { display: none; } }
+
+/* ---------- Artigos ---------- */
+.page-artigos .page-hero__title { font-size: clamp(38px, 6vw, 88px); max-width: 17ch; overflow-wrap: break-word; }
+.post-byline { margin-top: 26px; font-size: 14.5px; color: var(--ink-2); }
+.post-byline a { color: var(--copper-deep); font-weight: 600; }
+.post { padding-top: clamp(56px, 9vh, 110px); }
+.post__body { margin: 0 auto; max-width: 42em; }
+.post__body h2 { font-family: var(--serif); font-weight: 350; letter-spacing: -.015em; font-size: clamp(28px, 3vw, 40px); line-height: 1.12; color: var(--ink); margin: 1.8em 0 .7em; }
+.post__body h2:first-child { margin-top: 0; }
+.post__body ul, .post__body ol { padding-left: 1.2em; margin: 0 0 1.25em; display: grid; gap: 12px; }
+.post__body li::marker { color: var(--copper); }
+.post__body a { color: var(--copper-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.post__body .compare { margin: 1.6em 0; }
+.post__body .compare table { min-width: 0; }
+.post__body .compare th, .post__body .compare td { padding: 14px 18px; }
+.post__body .notice { margin: 2.4em 0 0; }
+.post__refs { margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--line); font-size: 14.5px; }
+.post__refs h2 { font-size: 22px; margin: 0 0 1em; }
+.post__refs ol { gap: 8px; }
+.post__refs a { overflow-wrap: anywhere; }
+.post-list { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line); max-width: 960px; }
+.post-row { display: grid; gap: 12px; padding: clamp(32px, 5vh, 48px) 0; border-bottom: 1px solid var(--line); }
+.post-row__meta { margin: 0; font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--copper-deep); }
+.post-row__meta time { font-weight: 600; letter-spacing: .06em; text-transform: none; color: var(--ink-2); font-size: 14px; }
+.post-row__title { font-family: var(--serif); font-weight: 350; letter-spacing: -.015em; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.08; margin: 0; color: var(--ink); }
+.post-row__title a { color: inherit; text-decoration: none; }
+.post-row__title a:hover { color: var(--copper); }
+.post-row p:not(.post-row__meta) { margin: 0; color: var(--ink-2); max-width: 40em; }
+.post-row .link-arrow { justify-self: start; }

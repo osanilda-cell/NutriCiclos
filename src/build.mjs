@@ -65,6 +65,7 @@ const NAV = [
   { key: "fases", href: "fases/", label: "As fases" },
   { key: "tireoide", href: "tireoide/", label: "Tireoide" },
   { key: "servicos", href: "servicos/", label: "Serviços" },
+  { key: "artigos", href: "artigos/", label: "Artigos" },
   { key: "nutricionista", href: "nutricionista/", label: "A Nutricionista" },
   { key: "contato", href: "contato/", label: "Contato" },
 ];
@@ -408,6 +409,44 @@ const crumbs = (items) => ({
   "@type": "BreadcrumbList",
   itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it[0], item: SITE.url + "/" + it[1] })),
 });
+
+/* ======================= ARTIGOS ======================= */
+// Cada artigo é um arquivo .md em src/artigos/: cabeçalho entre "---" e texto em Markdown simples
+// (títulos ##, parágrafos, listas, tabelas, **negrito**, *itálico* e [links](url)).
+// O link "#lista-de-espera" vira o WhatsApp com a mensagem da lista de espera.
+const WA_LISTA = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent("Olá, Osana! Vim pelo site da NutriCiclos e quero entrar na lista de espera.")}`;
+const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+const dataBR = (d) => { const [y, m, dd] = d.split("-").map(Number); return `${dd} de ${MESES[m - 1]} de ${y}`; };
+const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const inline = (s) => esc(s)
+  .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, u) => u === "#lista-de-espera"
+    ? `<a href="${WA_LISTA}" target="_blank" rel="noopener">${t}</a>`
+    : /^https?:/.test(u) ? `<a href="${u}" target="_blank" rel="noopener">${t}</a>` : `<a href="${u}">${t}</a>`)
+  .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+  .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+function markdown(md) {
+  const out = [];
+  for (const block of md.trim().split(/\n\s*\n/)) {
+    const lines = block.split("\n");
+    if (block.startsWith("## ")) out.push(`<h2>${inline(block.slice(3))}</h2>`);
+    else if (lines.every((l) => l.startsWith("- "))) out.push(`<ul>${lines.map((l) => `<li>${inline(l.slice(2))}</li>`).join("")}</ul>`);
+    else if (lines.every((l) => /^\d+\. /.test(l))) out.push(`<ol>${lines.map((l) => `<li>${inline(l.replace(/^\d+\. /, ""))}</li>`).join("")}</ol>`);
+    else if (lines.every((l) => l.startsWith("|"))) {
+      const cells = (l) => l.slice(1, -1).split("|").map((c) => inline(c.trim()));
+      const [h, , ...rows] = lines;
+      out.push(`<div class="compare"><table><thead><tr>${cells(h).map((c) => `<th scope="col">${c}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${cells(r).map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`);
+    } else out.push(`<p>${inline(lines.join(" "))}</p>`);
+  }
+  return out.join("\n");
+}
+const ARTICLES = fs.readdirSync(path.join(__dirname, "artigos")).filter((f) => f.endsWith(".md")).map((f) => {
+  const [, meta, body] = fs.readFileSync(path.join(__dirname, "artigos", f), "utf8").match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  const a = Object.fromEntries(meta.split("\n").map((l) => [l.slice(0, l.indexOf(":")).trim(), l.slice(l.indexOf(":") + 1).trim()]));
+  // o primeiro parágrafo vira o resumo em destaque; as referências ficam num bloco à parte
+  const [intro, ...rest] = body.trim().split(/\n\s*\n/);
+  const [main, refs = ""] = rest.join("\n\n").split(/^## Referências\s*$/m);
+  return { ...a, slug: f.replace(/\.md$/, ""), intro, main, refs };
+}).sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
 
 /* ======================= PÁGINAS ======================= */
 const pages = [];
@@ -1048,6 +1087,71 @@ ${pageHero({ eyebrow: "Contato", title: "Agende sua <em>consulta</em>.", lead: "
 });
 
 /* ---------- 404 ---------- */
+/* ---------- ARTIGOS ---------- */
+const articleCard = (a, r) => `
+<li class="post-row" data-reveal>
+  <p class="post-row__meta"><span>${a.tag}</span> · <time datetime="${a.date}">${dataBR(a.date)}</time></p>
+  <h2 class="post-row__title"><a href="${r}artigos/${a.slug}/">${a.title}</a></h2>
+  <p>${inline(a.description)}</p>
+  <a class="link-arrow" href="${r}artigos/${a.slug}/" aria-hidden="true" tabindex="-1">Ler artigo ${I.arrow}</a>
+</li>`;
+
+pages.push({
+  key: "artigos",
+  path: "artigos/",
+  file: "artigos/index.html",
+  title: "Artigos sobre menopausa e hipotireoidismo | NutriCiclos",
+  description: "Respostas simples, com base no Ministério da Saúde e em fontes oficiais, para as dúvidas mais comuns sobre menopausa, hipotireoidismo e alimentação.",
+  jsonld: [crumbs([["Início", ""], ["Artigos", "artigos/"]]), {
+    "@context": "https://schema.org", "@type": "Blog", name: "Artigos NutriCiclos", url: SITE.url + "/artigos/", inLanguage: "pt-BR", publisher: { "@id": SITE.url + "/#clinica" },
+    blogPost: ARTICLES.map((a) => ({ "@type": "BlogPosting", headline: a.title, url: `${SITE.url}/artigos/${a.slug}/`, datePublished: a.date })),
+  }],
+  body: (r) => `
+${pageHero({ eyebrow: "Artigos", title: "Dúvidas comuns, respostas <em>simples</em>.", lead: "Textos curtos sobre menopausa, hipotireoidismo e alimentação, sempre com base no Ministério da Saúde e em fontes oficiais." }, r)}
+<section class="section" aria-label="Lista de artigos">
+  <div class="container">
+    <ol class="post-list">${ARTICLES.map((a) => articleCard(a, r)).join("")}</ol>
+  </div>
+</section>
+${cta(r)}
+`,
+});
+
+for (const a of ARTICLES) {
+  const others = ARTICLES.filter((o) => o !== a).slice(0, 3);
+  pages.push({
+    key: "artigos",
+    path: `artigos/${a.slug}/`,
+    file: `artigos/${a.slug}/index.html`,
+    title: a.seoTitle || `${a.title} | NutriCiclos`,
+    ogTitle: a.title,
+    description: a.description,
+    jsonld: [
+      crumbs([["Início", ""], ["Artigos", "artigos/"], [a.title, `artigos/${a.slug}/`]]),
+      { ...articleLd(a.title, a.description, `artigos/${a.slug}/`), "@type": "BlogPosting", datePublished: a.date, dateModified: a.date, author: { "@type": "Person", "@id": SITE.url + "/nutricionista/#osana", name: SITE.nutri, url: SITE.url + "/nutricionista/" } },
+    ],
+    body: (r) => `
+${pageHero({ eyebrow: `Artigos · ${a.tag}`, title: a.title, lead: inline(a.intro), extra: `<p class="post-byline" data-hero-in>Por <a href="${r}nutricionista/">${SITE.nutri}</a>, nutricionista · ${SITE.crn} · <time datetime="${a.date}">${dataBR(a.date)}</time></p>` }, r)}
+<article class="section post" aria-label="${esc(a.title)}">
+  <div class="container">
+    <div class="post__body prose">
+${markdown(a.main)}
+      <p class="notice">Este texto é informativo e não substitui uma consulta. A dose de qualquer remédio é sempre definida pelo médico.</p>
+      ${a.refs ? `<div class="post__refs"><h2>Referências</h2>${markdown(a.refs)}</div>` : ""}
+    </div>
+  </div>
+</article>
+${others.length ? `<section class="section section--sand" aria-labelledby="mais-artigos">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow" data-reveal>Continue lendo</p><h2 class="h2" id="mais-artigos" data-split>Outros <em>artigos</em></h2></div>
+    <ol class="post-list">${others.map((o) => articleCard(o, r)).join("")}</ol>
+  </div>
+</section>` : ""}
+${cta(r)}
+`,
+  });
+}
+
 pages.push({
   key: "404",
   path: "",
