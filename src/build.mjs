@@ -112,7 +112,7 @@ ${(p.jsonld || []).map((j) => `<script type="application/ld+json">${JSON.stringi
 
 function header(p, r) {
   const links = NAV.map((n) => `<li><a class="nav__link" href="${r}${n.href || "./"}"${n.key === p.key ? ' aria-current="page"' : ""}>${n.label}</a></li>`).join("");
-  const mlinks = NAV.map((n, i) => `<li><a href="${r}${n.href || "./"}"${n.key === p.key ? ' aria-current="page"' : ""}>${n.label}<small>0${i + 1}</small></a></li>`).join("");
+  const mlinks = NAV.map((n, i) => `<li><a href="${r}${n.href || "./"}"${n.key === p.key ? ' aria-current="page"' : ""}>${n.label} <small aria-hidden="true">0${i + 1}</small></a></li>`).join("");
   return `
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <header class="site-header">

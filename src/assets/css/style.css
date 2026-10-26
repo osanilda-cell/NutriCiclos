@@ -236,6 +236,7 @@ button { font: inherit; color: inherit; }
 .mobile-menu__foot .btn { width: 100%; }
 .mobile-menu__foot p { margin: 0; font-size: 13px; color: var(--ink-3); text-align: center; }
 
+@media (min-width: 1041px) { .mobile-menu { display: none; } }
 @media (max-width: 1040px) {
   .nav__list, .nav .btn { display: none; }
   .menu-toggle { display: block; }
