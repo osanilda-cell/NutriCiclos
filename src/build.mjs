@@ -14,8 +14,8 @@ export const SITE = {
   nutri: "Osana Melo",
   crn: "CRN-10 6463",
   email: "contato@nutriciclos.com.br",
-  whatsapp: "5511985469311",          // formato internacional, só números
-  whatsappLabel: "(11) 98546-9311",
+  whatsapp: "5548991232141",          // formato internacional, só números
+  whatsappLabel: "(48) 99123-2141",
   waText: "Olá, Osana! Vim pelo site da NutriCiclos e gostaria de agendar uma consulta.",
 };
 const WA = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.waText)}`;
@@ -365,7 +365,7 @@ const ORG = {
   image: SITE.url + "/assets/img/og-image.jpg",
   description: "Clínica de nutrição para a mulher nas fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa), com atenção ao hipotireoidismo e às alterações da tireoide. Atendimento online e presencial em Florianópolis.",
   email: SITE.email,
-  telephone: "+55 11 98546-9311",
+  telephone: "+55 48 99123-2141",
   medicalSpecialty: "DietNutrition",
   slogan: "Nutrição em cada fase da menopausa",
   areaServed: [{ "@type": "City", name: "Florianópolis" }, { "@type": "Country", name: "Brasil" }],
@@ -1024,7 +1024,7 @@ pages.push({
   path: "contato/",
   file: "contato/index.html",
   title: "Contato e agendamento | NutriCiclos — Clínica de Nutrição",
-  description: "Agende sua consulta com a nutricionista Osana Melo (CRN-10 6463) pelo WhatsApp (11) 98546-9311 ou por e-mail. Online para todo o Brasil e presencial em Florianópolis.",
+  description: "Agende sua consulta com a nutricionista Osana Melo (CRN-10 6463) pelo WhatsApp (48) 99123-2141 ou por e-mail. Online para todo o Brasil e presencial em Florianópolis.",
   jsonld: [crumbs([["Início", ""], ["Contato", "contato/"]]), { "@context": "https://schema.org", "@type": "ContactPage", url: SITE.url + "/contato/", about: ORG }],
   body: (r) => `
 ${pageHero({ eyebrow: "Contato", title: "Agende sua <em>consulta</em>.", lead: "Atendimento online para todo o Brasil e presencial em Florianópolis e região." }, r)}
