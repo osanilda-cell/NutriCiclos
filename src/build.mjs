@@ -148,7 +148,7 @@ function footer(r) {
       <div class="footer__brand">
         <img class="brand__mark" src="${r}assets/img/emblem-light.svg" alt="" width="54" height="65" loading="lazy">
         <img class="brand__name" src="${r}assets/img/wordmark-light.svg" alt="NutriCiclos" width="190" height="38" loading="lazy">
-        <p>Nutrição para mulheres. Cuidado nutricional para a mulher em cada fase da menopausa, com atenção à tireoide. Atendimento online para todo o Brasil e presencial em Florianópolis e região.</p>
+        <p>Nutrição para mulheres. Cuidado nutricional para a mulher em cada fase da menopausa, com atenção à tireoide. Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região.</p>
       </div>
       <div>
         <h2>Navegação</h2>
@@ -214,7 +214,7 @@ function pageHero({ eyebrow, title, lead, extra = "" }, r) {
 </section>`;
 }
 
-function cta(r, { title = "Cada fase da menopausa merece um cuidado <em>nutricional</em> específico.", lead = "Atendimento online para todo o Brasil e presencial em Florianópolis e região." } = {}) {
+function cta(r, { title = "Cada fase da menopausa merece um cuidado <em>nutricional</em> específico.", lead = "Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região." } = {}) {
   return `
 <section class="cta" aria-labelledby="cta-title">
   <div class="container">
@@ -331,7 +331,7 @@ const SERVICES = [
 ];
 
 const STEPS = [
-  { t: "Primeiro contato", s: "Você fala comigo pelo WhatsApp ou por e-mail e escolhemos juntas o melhor horário, online ou presencial." },
+  { t: "Primeiro contato", s: "Você fala comigo pelo WhatsApp ou por e-mail e escolhemos juntas o melhor horário, online, presencial ou em domicílio." },
   { t: "Consulta e avaliação", s: "Escuta da sua história, rotina, exames e objetivos, com avaliação da composição corporal por bioimpedância." },
   { t: "Plano personalizado", s: "Estratégias alimentares realistas, pensadas para a sua fase, para a sua tireoide e para o seu dia a dia." },
   { t: "Acompanhamento", s: "Retornos para ajustar o plano, acompanhar sua evolução e seguir ao seu lado." },
@@ -345,7 +345,7 @@ const FAQ = [
   ["Palpitação e calor são menopausa ou hipertireoidismo?", "Podem ser os dois. Calor, suor, palpitações e insônia aparecem tanto na perimenopausa quanto no hipertireoidismo, como na doença de Graves. Por isso vale avaliar a tireoide com a sua médica."],
   ["Posso tomar levotiroxina com café ou com o cálcio?", "O ideal é tomar a levotiroxina em jejum, só com água, e esperar de 30 a 60 minutos para o café da manhã. Suplementos de cálcio e de ferro devem ficar a cerca de 4 horas de distância do remédio."],
   ["Preciso de nutricionista se já faço reposição hormonal?", "A reposição pode ser uma aliada valiosa, mas sozinha não resolve tudo. A alimentação protege músculos, ossos e coração e ajuda no peso e na energia, com ou sem reposição."],
-  ["O atendimento é online?", "Sim. O atendimento é online para todo o Brasil e presencial em Florianópolis e região."],
+  ["O atendimento é online?", "Sim. O atendimento é online para todo o Brasil e presencial ou em domicílio em Florianópolis e região."],
 ];
 
 const stepsHtml = () => `
@@ -363,7 +363,7 @@ const ORG = {
   url: SITE.url + "/",
   logo: SITE.url + "/assets/img/logo-nutriciclos.jpg",
   image: SITE.url + "/assets/img/og-image.jpg",
-  description: "Nutrição para a mulher nas fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa), com atenção ao hipotireoidismo e às alterações da tireoide. Atendimento online e presencial em Florianópolis.",
+  description: "Nutrição para a mulher nas fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa), com atenção ao hipotireoidismo e às alterações da tireoide. Atendimento online e presencial ou em domicílio em Florianópolis.",
   email: SITE.email,
   telephone: "+55 48 99123-2141",
   medicalSpecialty: "DietNutrition",
@@ -505,7 +505,7 @@ pages.push({
         <a class="btn btn--copper" href="${WA}" target="_blank" rel="noopener">${I.chat} Agendar pelo WhatsApp</a>
         <a class="btn btn--ghost" href="#ciclos">Descubra sua fase ${I.arrow}</a>
       </div>
-      <p class="hero__note" data-hero-in>Atendimento online para todo o Brasil e presencial em Florianópolis e região.</p>
+      <p class="hero__note" data-hero-in>Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região.</p>
     </div>
     <div class="hero__visual" aria-hidden="true">
       <span class="hero__orbit"></span>
@@ -627,7 +627,7 @@ pages.push({
       <div class="services__intro">
         <p class="eyebrow" data-reveal>Serviços</p>
         <h2 class="h2" id="svc-title" data-split>Cuidado sob <em>medida</em> para você.</h2>
-        <p class="muted" data-reveal>Cada atendimento é pensado de acordo com a sua fase, a sua tireoide e as suas necessidades. Online para todo o Brasil e presencial em Florianópolis e região.</p>
+        <p class="muted" data-reveal>Cada atendimento é pensado de acordo com a sua fase, a sua tireoide e as suas necessidades. Online para todo o Brasil e presencial ou em domicílio em Florianópolis e região.</p>
         <div data-reveal><a class="link-arrow" href="servicos/">Ver todos os serviços ${I.arrow}</a></div>
       </div>
       ${SERVICES.map((s, i) => `
@@ -769,7 +769,7 @@ ${pageHero({ eyebrow: "Alterações tireoidianas", title: "Menopausa ou <em>tire
   </div>
 </section>
 
-${cta(r, { title: "Menopausa e tireoide, cuidadas <em>juntas</em>.", lead: "Atendimento online para todo o Brasil e presencial em Florianópolis e região." })}
+${cta(r, { title: "Menopausa e tireoide, cuidadas <em>juntas</em>.", lead: "Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região." })}
 `,
 });
 
@@ -796,7 +796,7 @@ ${articleBody(r, [
   { eyebrow: "Peso", title: "Hipotireoidismo <em>engorda</em>?", html: `<p data-reveal>Sem tratamento, o hipotireoidismo pode causar um ganho de peso moderado, em boa parte por retenção de líquido. Com o tratamento em dia, o peso passa a depender dos mesmos fatores que pesam na menopausa: massa muscular, sono, estresse e alimentação. É nisso que o plano trabalha.</p>` },
 ])}
 <section class="section section--paper"><div class="container"><p class="notice" data-reveal>O cuidado nutricional complementa, e não substitui, o acompanhamento com o endocrinologista. A dose da levotiroxina é sempre definida pelo médico.</p></div></section>
-${cta(r, { title: "Hipotireoidismo e menopausa, cuidados <em>juntos</em>.", lead: "Atendimento online para todo o Brasil e presencial em Florianópolis e região." })}
+${cta(r, { title: "Hipotireoidismo e menopausa, cuidados <em>juntos</em>.", lead: "Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região." })}
 `,
 });
 
@@ -821,7 +821,7 @@ ${articleBody(r, [
   ].map((t) => `<li>${t}</li>`).join("")}</ul>` },
 ])}
 <section class="section section--paper"><div class="container"><p class="notice" data-reveal>O cuidado nutricional complementa, e não substitui, o acompanhamento com o endocrinologista, que define o tratamento.</p></div></section>
-${cta(r, { title: "Hipertireoidismo e menopausa, cuidados <em>juntos</em>.", lead: "Atendimento online para todo o Brasil e presencial em Florianópolis e região." })}
+${cta(r, { title: "Hipertireoidismo e menopausa, cuidados <em>juntos</em>.", lead: "Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região." })}
 `,
 });
 
@@ -978,7 +978,7 @@ ${pageHero({ eyebrow: "A Nutricionista", title: "Seja muito bem-vinda. Eu sou a 
   </div>
 </section>
 
-${cta(r, { title: "Vamos caminhar <em>juntas</em>?", lead: "Atendimento online para todo o Brasil e presencial em Florianópolis e região." })}
+${cta(r, { title: "Vamos caminhar <em>juntas</em>?", lead: "Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região." })}
 `,
 });
 
@@ -997,7 +997,7 @@ pages.push({
     },
   ],
   body: (r) => `
-${pageHero({ eyebrow: "Serviços", title: "Cuidado nutricional para <em>cada fase</em> da menopausa.", lead: "Cada atendimento é pensado de acordo com a sua fase, a sua tireoide e as suas necessidades. Online para todo o Brasil e presencial em Florianópolis e região." }, r)}
+${pageHero({ eyebrow: "Serviços", title: "Cuidado nutricional para <em>cada fase</em> da menopausa.", lead: "Cada atendimento é pensado de acordo com a sua fase, a sua tireoide e as suas necessidades. Online para todo o Brasil e presencial ou em domicílio em Florianópolis e região." }, r)}
 
 <section class="section" aria-labelledby="lista-servicos">
   <div class="container split">
@@ -1043,10 +1043,10 @@ pages.push({
   path: "contato/",
   file: "contato/index.html",
   title: "Contato e agendamento | NutriCiclos",
-  description: "Agende sua consulta com a nutricionista Osana Melo (CRN-10 6463) pelo WhatsApp (48) 99123-2141 ou por e-mail. Online para todo o Brasil e presencial em Florianópolis.",
+  description: "Agende sua consulta com a nutricionista Osana Melo (CRN-10 6463) pelo WhatsApp (48) 99123-2141 ou por e-mail. Online para todo o Brasil e presencial ou em domicílio em Florianópolis.",
   jsonld: [crumbs([["Início", ""], ["Contato", "contato/"]]), { "@context": "https://schema.org", "@type": "ContactPage", url: SITE.url + "/contato/", about: ORG }],
   body: (r) => `
-${pageHero({ eyebrow: "Contato", title: "Agende sua <em>consulta</em>.", lead: "Atendimento online para todo o Brasil e presencial em Florianópolis e região." }, r)}
+${pageHero({ eyebrow: "Contato", title: "Agende sua <em>consulta</em>.", lead: "Atendimento online para todo o Brasil e presencial ou em domicílio em Florianópolis e região." }, r)}
 
 <section class="section" aria-label="Canais de atendimento">
   <div class="container contact-grid">
