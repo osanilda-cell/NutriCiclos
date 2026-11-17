@@ -65,7 +65,7 @@ Não existe uma "dieta da tireoide". Vale a mesma regra de ouro do Ministério d
 
 ## Um plano feito para você
 
-Eu convivo com o hipotireoidismo e sei como é ajustar remédio, café da manhã e rotina para um cuidado não atrapalhar o outro. Se você também está na menopausa, os dois cuidados precisam andar juntos. [Entre na lista de espera](#lista-de-espera) da NutriCiclos e seja avisada quando a agenda abrir.
+Eu convivo com o hipotireoidismo e sei como é ajustar remédio, café da manhã e rotina para um cuidado não atrapalhar o outro. Se você também está na menopausa, os dois cuidados precisam andar juntos. [Entre em contato](../../contato/) com a NutriCiclos.
 
 ## Referências
 
