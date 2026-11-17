@@ -327,7 +327,7 @@ const SERVICES = [
   { icon: "thyroid", short: "Hipotireoidismo (Hashimoto) e hipertireoidismo (Graves): alimentação que funciona junto com o tratamento.", t: "Nutrição no hipotireoidismo e nas alterações da tireoide", s: "Cuidado nutricional nas alterações tireoidianas, como a doença de Hashimoto (hipotireoidismo) e a doença de Graves (hipertireoidismo): horário certo da levotiroxina, selênio, iodo, ferro e vitamina D na medida certa, sempre junto com o tratamento do endocrinologista.", tags: ["Hipotireoidismo", "Hashimoto", "Hipertireoidismo", "Graves"] },
   { icon: "leaf", short: "Perder gordura na menopausa sem perder músculo, sem dietas genéricas.", t: "Emagrecimento na menopausa", s: "Sem dietas genéricas nem restrições impossíveis: mudanças consistentes, que reduzem a gordura abdominal, preservam a massa muscular e cabem na sua rotina, para resultados que se sustentam.", tags: ["Gordura abdominal", "Massa muscular", "Constância"] },
   { icon: "sport", short: "Alimentação ajustada ao treino de força, para manter músculo, osso e energia depois dos 40.", t: "Treino de força e alimentação depois dos 40", s: "Alimentação ajustada ao seu treino e aos seus objetivos: energia para treinar, recuperação e o estímulo certo para manter músculos e ossos fortes depois dos 40.", tags: ["Força", "Recuperação", "Massa muscular"] },
-  { icon: "pen", short: "Durante e após o uso de semaglutida (Ozempic®) e tirzepatida (Mounjaro®), preservando a massa muscular.", t: "Acompanhamento com medicamentos para emagrecimento", s: "Acompanhamento nutricional durante e após o uso de medicamentos como semaglutida (Ozempic®) e tirzepatida (Mounjaro®): garantir proteína e nutrientes com o apetite reduzido, preservar a massa muscular e manter os resultados depois da suspensão.", tags: ["Durante o uso", "Após a suspensão", "Preservar massa muscular"] },
+  { icon: "pen", short: "Durante e após o uso de semaglutida e tirzepatida, preservando a massa muscular.", t: "Acompanhamento com medicamentos para emagrecimento", s: "Acompanhamento nutricional durante e após o uso de medicamentos como semaglutida e tirzepatida: garantir proteína e nutrientes com o apetite reduzido, preservar a massa muscular e manter os resultados depois da suspensão.", tags: ["Durante o uso", "Após a suspensão", "Preservar massa muscular"] },
 ];
 
 const STEPS = [
@@ -988,7 +988,7 @@ pages.push({
   path: "servicos/",
   file: "servicos/index.html",
   title: "Serviços: nutrição na menopausa e no hipotireoidismo | NutriCiclos",
-  description: "Nutrição nas fases da menopausa, no hipotireoidismo e nas alterações da tireoide, bioimpedância, emagrecimento e acompanhamento com Ozempic® e Mounjaro®.",
+  description: "Nutrição nas fases da menopausa, no hipotireoidismo e nas alterações da tireoide, bioimpedância e emagrecimento, inclusive durante o uso de medicamentos.",
   jsonld: [
     crumbs([["Início", ""], ["Serviços", "servicos/"]]),
     {
