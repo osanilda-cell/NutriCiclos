@@ -345,6 +345,7 @@ const FAQ = [
   ["Palpitação e calor são menopausa ou hipertireoidismo?", "Podem ser os dois. Calor, suor, palpitações e insônia aparecem tanto na perimenopausa quanto no hipertireoidismo, como na doença de Graves. Por isso vale avaliar a tireoide com a sua médica."],
   ["Posso tomar levotiroxina com café ou com o cálcio?", "O ideal é tomar a levotiroxina em jejum, só com água, e esperar de 30 a 60 minutos para o café da manhã. Suplementos de cálcio e de ferro devem ficar a cerca de 4 horas de distância do remédio."],
   ["Preciso de nutricionista se já faço reposição hormonal?", "A reposição pode ser uma aliada valiosa, mas sozinha não resolve tudo. A alimentação protege músculos, ossos e coração e ajuda no peso e na energia, com ou sem reposição."],
+  ["Você atende em domicílio?", "Sim. Em Florianópolis e região, a consulta pode ser feita na sua casa. É só combinar pelo WhatsApp ou por e-mail."],
   ["O atendimento é online?", "Sim. O atendimento é online para todo o Brasil e presencial ou em domicílio em Florianópolis e região."],
 ];
 
@@ -491,7 +492,7 @@ pages.push({
   file: "index.html",
   title: "Nutricionista para Menopausa e Hipotireoidismo | NutriCiclos",
   ogTitle: "NutriCiclos — Nutrição em cada fase da menopausa",
-  description: "Nutrição para pré-menopausa, perimenopausa, menopausa e pós-menopausa, com atenção ao hipotireoidismo (Hashimoto) e ao hipertireoidismo (Graves). Agende.",
+  description: "Nutricionista para menopausa e hipotireoidismo (Hashimoto) e hipertireoidismo (Graves). Atendimento online e em domicílio em Florianópolis e região.",
   preload: `<link rel="preload" href="assets/img/emblem-3d.webp" as="image" type="image/webp" fetchpriority="high">`,
   jsonld: [{ "@context": "https://schema.org", "@graph": [ORG, PERSON, { "@type": "WebSite", "@id": SITE.url + "/#site", url: SITE.url + "/", name: SITE.fullName, inLanguage: "pt-BR", publisher: { "@id": SITE.url + "/#clinica" } }] }, faqLd()],
   body: (r) => `
@@ -988,7 +989,7 @@ pages.push({
   path: "servicos/",
   file: "servicos/index.html",
   title: "Serviços: nutrição na menopausa e no hipotireoidismo | NutriCiclos",
-  description: "Nutrição nas fases da menopausa, no hipotireoidismo e nas alterações da tireoide, bioimpedância e emagrecimento, inclusive durante o uso de medicamentos.",
+  description: "Nutrição nas fases da menopausa, no hipotireoidismo e nas alterações da tireoide, bioimpedância e emagrecimento. Online e em domicílio em Florianópolis.",
   jsonld: [
     crumbs([["Início", ""], ["Serviços", "servicos/"]]),
     {
@@ -1042,7 +1043,7 @@ pages.push({
   key: "contato",
   path: "contato/",
   file: "contato/index.html",
-  title: "Contato e agendamento | NutriCiclos",
+  title: "Nutricionista em domicílio e online em Florianópolis | NutriCiclos",
   description: "Agende sua consulta com a nutricionista Osana Melo (CRN-10 6463) pelo WhatsApp (48) 99123-2141 ou por e-mail. Online para todo o Brasil e presencial ou em domicílio em Florianópolis.",
   jsonld: [crumbs([["Início", ""], ["Contato", "contato/"]]), { "@context": "https://schema.org", "@type": "ContactPage", url: SITE.url + "/contato/", about: ORG }],
   body: (r) => `
