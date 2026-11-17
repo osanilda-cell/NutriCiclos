@@ -1,6 +1,6 @@
-# NutriCiclos — Clínica de Nutrição
+# NutriCiclos — Nutrição para mulheres
 
-Site institucional da **NutriCiclos**, clínica de nutrição da nutricionista **Osana Melo (CRN-10 6463)**.
+Site institucional da **NutriCiclos**, site da nutricionista **Osana Melo (CRN-10 6463)**.
 
 > Nutrição em cada ciclo da vida.
 
@@ -117,4 +117,4 @@ O certificado HTTPS é emitido automaticamente pelo Netlify.
 - Tipografia: [Fraunces](https://fonts.google.com/specimen/Fraunces) e [Manrope](https://fonts.google.com/specimen/Manrope), ambas sob a SIL Open Font License
 - Animações: [GSAP](https://gsap.com) (licença padrão, de uso gratuito) e [Lenis](https://github.com/darkroomengineering/lenis) (MIT)
 
-© NutriCiclos — Clínica de Nutrição. Todos os direitos reservados.
+© NutriCiclos — Nutrição para mulheres. Todos os direitos reservados.
