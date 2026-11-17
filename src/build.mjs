@@ -498,7 +498,7 @@ pages.push({
 <section class="hero" aria-labelledby="hero-title">
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="eyebrow" data-hero-in>Nutricionista no climatério<span class="hide-sm">· ${SITE.nutri}</span></p>
+      <p class="eyebrow" data-hero-in>Nutrição no climatério e menopausa</p>
       <h1 class="display hero__title" id="hero-title" data-hero-title>Nutrição para<br> cada fase da<br> <em>menopausa</em></h1>
       <p class="lead hero__lead" data-hero-in>Da pré-menopausa à pós-menopausa, um plano alimentar que acompanha a mudança dos seus hormônios e também olha para a tireoide. Cansaço, calores e mudanças de peso podem ser menopausa, uma alteração da tireoide ou as duas coisas juntas.</p>
       <div class="hero__actions" data-hero-in>
