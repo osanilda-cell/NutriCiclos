@@ -384,7 +384,7 @@ const PERSON = {
   ],
   hasCredential: [
     { "@type": "EducationalOccupationalCredential", credentialCategory: "Graduação", name: "Nutrição", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Nove de Julho (UNINOVE)" } },
-    { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso livre", name: "Climatério e Menopausa" },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Climatério e Menopausa" },
     { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Plantas Medicinais e Fitoterapia", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Federal de Santa Catarina (UFSC)" } },
     { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Educação Alimentar e Nutricional", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Federal de Santa Catarina (UFSC)" } },
     { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Segurança Alimentar e Nutricional", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Federal de Santa Catarina (UFSC)" } },
@@ -935,12 +935,12 @@ ${pageHero({ eyebrow: "A Nutricionista", title: "Seja muito bem-vinda. Eu sou a 
     <div class="section-head">
       <p class="eyebrow" data-reveal>Formação e experiência</p>
       <h2 class="h2" id="formacao" data-split>Eu não paro de estudar, porque o seu corpo <em>muda</em> e a ciência também.</h2>
-      <p class="muted" data-reveal>Cada curso que escolhi tem um motivo: cuidar melhor da mulher que está atravessando as fases da menopausa, muitas vezes junto com o hipotireoidismo. Veja o que cada formação significa na prática, dentro da sua consulta.</p>
+      <p class="muted" data-reveal>Cada curso que escolhi tem um motivo: cuidar melhor da mulher que está atravessando as fases da menopausa, às vezes junto com doenças da tireoide. Veja o que cada formação significa na prática, dentro da sua consulta.</p>
     </div>
     <div class="commit cv">
       <article class="commit__item" data-reveal><span class="svc-card__num">Graduação</span><h3>Nutrição</h3><p>Graduada pela Universidade Nove de Julho (UNINOVE), em São Paulo. É a base científica de todo o meu trabalho.</p></article>
-      <article class="commit__item" data-reveal><span class="svc-card__num">Curso livre</span><h3>Climatério e Menopausa</h3><p>Estudo dedicado às mudanças desta fase: ondas de calor, sono, gordura na barriga, ossos e músculos. É o centro do meu atendimento.</p></article>
-      <article class="commit__item" data-reveal><span class="svc-card__num">UFSC</span><h3>Plantas Medicinais e Fitoterapia</h3><p>Para indicar chás e plantas com segurança, sabendo quando podem ajudar e quando podem atrapalhar o remédio da tireoide ou a reposição hormonal.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">Curso</span><h3>Climatério e Menopausa</h3><p>Estudo dedicado às mudanças desta fase: ondas de calor, sono, gordura na barriga, ossos, músculos e suplementação. É o centro do meu atendimento.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">UFSC</span><h3>Plantas Medicinais e Fitoterapia</h3><p>Para indicar chás e plantas com segurança, sabendo quando e como podem auxiliar nesta fase da vida.</p></article>
       <article class="commit__item" data-reveal><span class="svc-card__num">UFSC</span><h3>Educação Alimentar e Nutricional</h3><p>Para que você aprenda a montar o seu prato com autonomia e confiança, e não fique presa a uma lista do que pode e do que não pode.</p></article>
       <article class="commit__item" data-reveal><span class="svc-card__num">UFSC</span><h3>Segurança Alimentar e Nutricional</h3><p>Para pensar a sua alimentação dentro da sua realidade: o que cabe no seu bolso, na sua rotina e na sua cidade, com comida de verdade.</p></article>
       <article class="commit__item" data-reveal><span class="svc-card__num">Em andamento</span><h3>Pós-graduação em Gestão de Cadeia de Suprimentos Sustentáveis</h3><p>Cursando. Um olhar para a origem dos alimentos e para escolhas mais sustentáveis, do campo até a sua mesa.</p></article>
