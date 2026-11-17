@@ -830,7 +830,7 @@ pages.push({
   key: "sobre",
   path: "sobre/",
   file: "sobre/index.html",
-  title: "Sobre nós | NutriCiclos — Clínica de Nutrição",
+  title: "Sobre nós: nutrição na menopausa e na tireoide | NutriCiclos",
   description: "Conheça a NutriCiclos: nutrição para a mulher em cada fase da menopausa, com atenção à tireoide, unindo ciência atualizada e atendimento humanizado.",
   jsonld: [crumbs([["Início", ""], ["Sobre nós", "sobre/"]]), { "@context": "https://schema.org", "@type": "AboutPage", name: "Sobre a NutriCiclos", url: SITE.url + "/sobre/", about: ORG }],
   body: (r) => `
