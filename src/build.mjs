@@ -363,7 +363,7 @@ const ORG = {
   url: SITE.url + "/",
   logo: SITE.url + "/assets/img/logo-nutriciclos.jpg",
   image: SITE.url + "/assets/img/og-image.jpg",
-  description: "Nutrição para a mulher nas fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa), com atenção ao hipotireoidismo e às alterações da tireoide. Atendimento online e presencial ou em domicílio em Florianópolis.",
+  description: "Nutrição para a mulher nas fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa), com atenção ao hipotireoidismo e às alterações da tireoide. Atendimento online, presencial ou em domicílio em Florianópolis.",
   email: SITE.email,
   telephone: "+55 48 99123-2141",
   medicalSpecialty: "DietNutrition",
