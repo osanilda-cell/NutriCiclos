@@ -2,7 +2,7 @@
   "name": "nutriciclos-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Site da NutriCiclos — Clínica de Nutrição",
+  "description": "Site da NutriCiclos — Nutrição para mulheres",
   "type": "module",
   "scripts": {
     "build": "node src/build.mjs",

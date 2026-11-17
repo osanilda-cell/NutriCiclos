@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NutriCiclos — Clínica de Nutrição
+   NutriCiclos — Nutrição para mulheres
    ========================================================================== */
 
 @font-face {
@@ -505,6 +505,7 @@ button { font: inherit; color: inherit; }
 }
 .footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-top: 28px; font-size: 13px; color: rgba(246, 236, 226, .66); }
 .footer__bottom p { margin: 0; }
+.footer__bottom a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 960px) { .footer__top { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .footer__top { grid-template-columns: 1fr 1fr; gap: 40px 20px; } .footer__brand, .footer__top > div:last-child { grid-column: 1 / -1; } .site-footer ul { gap: 14px; } }
 .hide-sm { display: inline; margin-left: -4px; }

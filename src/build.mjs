@@ -10,7 +10,7 @@ const OUT = path.resolve(__dirname, "../dist");
 export const SITE = {
   url: "https://nutriciclos.com.br",
   name: "NutriCiclos",
-  fullName: "NutriCiclos — Clínica de Nutrição",
+  fullName: "NutriCiclos — Nutrição para mulheres",
   nutri: "Osana Melo",
   crn: "CRN-10 6463",
   email: "contato@nutriciclos.com.br",
@@ -121,7 +121,7 @@ function header(p, r) {
       <img class="brand__mark" src="${r}assets/img/emblem-copper.svg" alt="" width="34" height="41">
       <span class="brand__word">
         <img class="brand__name" src="${r}assets/img/wordmark-copper.svg" alt="NutriCiclos" width="128" height="26">
-        <span class="brand__tag">Clínica de Nutrição</span>
+        <span class="brand__tag">Nutrição para mulheres</span>
       </span>
     </a>
     <nav class="nav" aria-label="Principal">
@@ -148,7 +148,7 @@ function footer(r) {
       <div class="footer__brand">
         <img class="brand__mark" src="${r}assets/img/emblem-light.svg" alt="" width="54" height="65" loading="lazy">
         <img class="brand__name" src="${r}assets/img/wordmark-light.svg" alt="NutriCiclos" width="190" height="38" loading="lazy">
-        <p>Clínica de Nutrição. Cuidado nutricional para a mulher em cada fase da menopausa, com atenção à tireoide. Atendimento online para todo o Brasil e presencial em Florianópolis e região.</p>
+        <p>Nutrição para mulheres. Cuidado nutricional para a mulher em cada fase da menopausa, com atenção à tireoide. Atendimento online para todo o Brasil e presencial em Florianópolis e região.</p>
       </div>
       <div>
         <h2>Navegação</h2>
@@ -167,8 +167,8 @@ function footer(r) {
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> NutriCiclos — Clínica de Nutrição</p>
-      <p>Responsável técnica: ${SITE.nutri} · Nutricionista · ${SITE.crn}</p>
+      <p>© <span data-year>2026</span> NutriCiclos — Nutrição para mulheres</p>
+      <p>${SITE.nutri} · Nutricionista · ${SITE.crn} · <a href="${r}privacidade/">Política de privacidade</a></p>
     </div>
   </div>
 </footer>`;
@@ -363,7 +363,7 @@ const ORG = {
   url: SITE.url + "/",
   logo: SITE.url + "/assets/img/logo-nutriciclos.jpg",
   image: SITE.url + "/assets/img/og-image.jpg",
-  description: "Clínica de nutrição para a mulher nas fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa), com atenção ao hipotireoidismo e às alterações da tireoide. Atendimento online e presencial em Florianópolis.",
+  description: "Nutrição para a mulher nas fases da menopausa (pré-menopausa, perimenopausa, menopausa e pós-menopausa), com atenção ao hipotireoidismo e às alterações da tireoide. Atendimento online e presencial em Florianópolis.",
   email: SITE.email,
   telephone: "+55 48 99123-2141",
   medicalSpecialty: "DietNutrition",
@@ -1042,7 +1042,7 @@ pages.push({
   key: "contato",
   path: "contato/",
   file: "contato/index.html",
-  title: "Contato e agendamento | NutriCiclos — Clínica de Nutrição",
+  title: "Contato e agendamento | NutriCiclos",
   description: "Agende sua consulta com a nutricionista Osana Melo (CRN-10 6463) pelo WhatsApp (48) 99123-2141 ou por e-mail. Online para todo o Brasil e presencial em Florianópolis.",
   jsonld: [crumbs([["Início", ""], ["Contato", "contato/"]]), { "@context": "https://schema.org", "@type": "ContactPage", url: SITE.url + "/contato/", about: ORG }],
   body: (r) => `
@@ -1170,6 +1170,55 @@ ${cta(r)}
 `,
   });
 }
+
+pages.push({
+  key: "privacidade",
+  path: "privacidade/",
+  file: "privacidade/index.html",
+  title: "Política de privacidade | NutriCiclos",
+  description: "Como a NutriCiclos trata os seus dados pessoais e de saúde, de acordo com a Lei Geral de Proteção de Dados (LGPD).",
+  jsonld: [crumbs([["Início", ""], ["Política de privacidade", "privacidade/"]])],
+  body: (r) => `
+${pageHero({ eyebrow: "Privacidade", title: "Política de <em>privacidade</em>", lead: "Como os seus dados são tratados, de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018)." }, r)}
+<article class="section post" aria-label="Política de privacidade">
+  <div class="container">
+    <div class="post__body prose">
+${markdown(`## Quem cuida dos seus dados
+
+A responsável pelos seus dados é ${SITE.nutri}, nutricionista, ${SITE.crn}. Para qualquer dúvida sobre privacidade, escreva para [${SITE.email}](mailto:${SITE.email}).
+
+## O que o site coleta
+
+O site não tem cadastro e não guarda os seus dados. O formulário de contato apenas monta uma mensagem, que você mesma envia pelo WhatsApp ou por e-mail. O site também não usa cookies de publicidade nem ferramentas de rastreamento.
+
+## Dados que você envia
+
+Quando você entra em contato ou faz uma consulta, pode compartilhar nome, telefone, e-mail e informações de saúde. Esses dados são usados apenas para:
+
+- responder ao seu contato e combinar o atendimento;
+- fazer o acompanhamento nutricional;
+- cumprir as obrigações da profissão e da lei.
+
+## Sigilo e segurança
+
+Informações de saúde são dados sensíveis pela LGPD e também são protegidas pelo sigilo profissional do nutricionista. Elas não são vendidas nem compartilhadas com outras pessoas ou empresas, a não ser quando a lei exigir ou com a sua autorização.
+
+O WhatsApp e o serviço de e-mail têm as suas próprias políticas de privacidade.
+
+## Por quanto tempo
+
+Os dados ficam guardados pelo tempo necessário para o atendimento e pelos prazos exigidos pelas normas profissionais.
+
+## Os seus direitos
+
+Você pode, a qualquer momento, pedir para ver, corrigir ou apagar os seus dados, ou saber como eles são usados. Basta escrever para [${SITE.email}](mailto:${SITE.email}). Dados que a lei obriga a guardar só podem ser apagados depois do prazo legal.
+
+Última atualização: 17 de novembro de 2026.`)}
+    </div>
+  </div>
+</article>
+`,
+});
 
 pages.push({
   key: "404",
