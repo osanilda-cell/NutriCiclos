@@ -35,7 +35,7 @@ Essa é uma queixa muito comum. Com os exames em dia, a facilidade de ganhar ou 
 
 Eu convivo com o hipotireoidismo e passo pela menopausa, e sei como é frustrante fazer tudo certo e ver a balança parada. O caminho é olhar para os dois juntos. Leia também: [O que comer no hipotireoidismo?](../o-que-comer-no-hipotireoidismo/)
 
-[Entre na lista de espera](#lista-de-espera) da NutriCiclos e seja avisada quando a agenda abrir.
+[Entre em contato](../../contato/) com a NutriCiclos.
 
 ## Referências
 
