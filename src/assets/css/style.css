@@ -794,3 +794,9 @@ button { font: inherit; color: inherit; }
 .post-row__title a:hover { color: var(--copper); }
 .post-row p:not(.post-row__meta) { margin: 0; color: var(--ink-2); max-width: 40em; }
 .post-row .link-arrow { justify-self: start; }
+
+/* Nutricionista: formação */
+.cv .commit__item .svc-card__num { margin-bottom: 28px; }
+.cv .commit__item h3 { font-size: 23px; line-height: 1.2; }
+.cv--extra { margin-top: 20px; }
+.cv--extra .commit__item { background: transparent; }

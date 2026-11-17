@@ -378,8 +378,18 @@ const PERSON = {
   name: SITE.nutri,
   jobTitle: "Nutricionista",
   identifier: SITE.crn,
-  alumniOf: { "@type": "CollegeOrUniversity", name: "Universidade Nove de Julho (UNINOVE)" },
-  knowsAbout: ["Nutrição na menopausa", "Hipotireoidismo", "Alterações da tireoide"],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Universidade Nove de Julho (UNINOVE)" },
+    { "@type": "CollegeOrUniversity", name: "Universidade Federal de Santa Catarina (UFSC)" },
+  ],
+  hasCredential: [
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "Graduação", name: "Nutrição", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Nove de Julho (UNINOVE)" } },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Climatério e Menopausa" },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Plantas Medicinais e Fitoterapia", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Federal de Santa Catarina (UFSC)" } },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Educação Alimentar e Nutricional", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Federal de Santa Catarina (UFSC)" } },
+    { "@type": "EducationalOccupationalCredential", credentialCategory: "Curso", name: "Segurança Alimentar e Nutricional", recognizedBy: { "@type": "CollegeOrUniversity", name: "Universidade Federal de Santa Catarina (UFSC)" } },
+  ],
+  knowsAbout: ["Nutrição na menopausa", "Climatério", "Hipotireoidismo", "Alterações da tireoide", "Fitoterapia", "Plantas medicinais", "Educação alimentar e nutricional", "Segurança alimentar e nutricional"],
   worksFor: { "@id": SITE.url + "/#clinica" },
   url: SITE.url + "/nutricionista/",
 };
@@ -924,12 +934,21 @@ ${pageHero({ eyebrow: "A Nutricionista", title: "Seja muito bem-vinda. Eu sou a 
   <div class="container">
     <div class="section-head">
       <p class="eyebrow" data-reveal>Formação e experiência</p>
-      <h2 class="h2" id="formacao" data-split>Experiência de vida e <em>experiência</em> profissional.</h2>
+      <h2 class="h2" id="formacao" data-split>Eu não paro de estudar, porque o seu corpo <em>muda</em> e a ciência também.</h2>
+      <p class="muted" data-reveal>Cada curso que escolhi tem um motivo: cuidar melhor da mulher que está atravessando as fases da menopausa, às vezes junto com doenças da tireoide. Veja o que cada formação significa na prática, dentro da sua consulta.</p>
     </div>
-    <div class="commit">
-      <article class="commit__item" data-reveal><span class="svc-card__num">Formação</span><h3>Nutrição</h3><p>Graduada pela Universidade Nove de Julho (UNINOVE), em São Paulo.</p></article>
-      <article class="commit__item" data-reveal><span class="svc-card__num">Experiência</span><h3>Serviço público</h3><p>Anos de experiência no atendimento ao público.</p></article>
-      <article class="commit__item" data-reveal><span class="svc-card__num">Registro</span><h3>${SITE.crn}</h3><p>Responsável técnica da NutriCiclos.</p></article>
+    <div class="commit cv">
+      <article class="commit__item" data-reveal><span class="svc-card__num">Graduação</span><h3>Nutrição</h3><p>Graduada pela Universidade Nove de Julho (UNINOVE), em São Paulo. É a base científica de todo o meu trabalho.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">Curso</span><h3>Climatério e Menopausa</h3><p>Estudo dedicado às mudanças desta fase: ondas de calor, sono, gordura na barriga, ossos, músculos e suplementação. É o centro do meu atendimento.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">UFSC</span><h3>Plantas Medicinais e Fitoterapia</h3><p>Para indicar chás e plantas com segurança, sabendo quando e como podem auxiliar nesta fase da vida.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">UFSC</span><h3>Educação Alimentar e Nutricional</h3><p>Para que você aprenda a montar o seu prato com autonomia e confiança, e não fique presa a uma lista do que pode e do que não pode.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">UFSC</span><h3>Segurança Alimentar e Nutricional</h3><p>Para pensar a sua alimentação dentro da sua realidade: o que cabe no seu bolso, na sua rotina e na sua cidade, com comida de verdade.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">Em andamento</span><h3>Pós-graduação em Gestão de Cadeia de Suprimentos Sustentáveis</h3><p>Cursando. Um olhar para a origem dos alimentos e para escolhas mais sustentáveis, do campo até a sua mesa.</p></article>
+    </div>
+    <div class="commit cv cv--extra">
+      <article class="commit__item" data-reveal><span class="svc-card__num">Experiência</span><h3>Serviço público</h3><p>Anos de experiência no atendimento ao público, ouvindo pessoas de todas as idades e realidades.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">Vivência</span><h3>Menopausa e hipotireoidismo</h3><p>Eu vivo as duas coisas na minha própria rotina. Sei, por experiência, como uma interfere na outra.</p></article>
+      <article class="commit__item" data-reveal><span class="svc-card__num">Registro</span><h3>${SITE.crn}</h3><p>Nutricionista registrada e responsável técnica da NutriCiclos.</p></article>
     </div>
   </div>
 </section>
