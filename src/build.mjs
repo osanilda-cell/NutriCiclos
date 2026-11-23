@@ -17,7 +17,13 @@ export const SITE = {
   whatsapp: "5548991232141",          // formato internacional, só números
   whatsappLabel: "(48) 99123-2141",
   waText: "Olá, Osana! Vim pelo site da NutriCiclos e gostaria de agendar uma consulta.",
+  // Google Search Console: cole aqui só o código da tag "google-site-verification" (o valor de content="...").
+  googleVerification: "",
+  // Perfis oficiais (Instagram, Perfil de Empresa no Google etc.). Ajudam o Google a ligar o site às redes.
+  instagram: "nutriciclos.nutri",
+  sameAs: ["https://www.instagram.com/nutriciclos.nutri/"],
 };
+const IG = `https://www.instagram.com/${SITE.instagram}/`;
 const WA = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.waText)}`;
 const VERSION = Date.now().toString(36);
 const HAS_PHOTO = fs.existsSync(path.join(__dirname, "assets/img/osana.jpg"));
@@ -26,6 +32,7 @@ const HAS_PHOTO = fs.existsSync(path.join(__dirname, "assets/img/osana.jpg"));
 const I = {
   arrow: `<svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`,
   chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.3 7.5L3.5 20.5l1.5-4.5A8.4 8.4 0 1 1 20.5 11.6Z"/><path d="M9 10.2c.3 1.9 2.3 4 4.4 4.5l1.3-1.1 1.8.8"/><path d="M9 10.2 9.9 9l-.7-1.8"/></svg>`,
+  insta: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg>`,
   mail: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>`,
   // serviços (48x48, traço fino)
   bio: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="9" width="34" height="32" rx="9"/><path d="M14 22a10 10 0 0 1 20 0"/><path d="m24 22 4.5-5"/><circle cx="24" cy="22" r="1.3" fill="currentColor"/><path d="M16 33h4M28 33h4"/></svg>`,
@@ -81,7 +88,7 @@ function head(p, r) {
 <title>${p.title}</title>
 <meta name="description" content="${p.description}">
 ${p.noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url}">`}
-<meta name="theme-color" content="#faf5ee">
+${SITE.googleVerification ? `<meta name="google-site-verification" content="${SITE.googleVerification}">\n` : ""}<meta name="theme-color" content="#faf5ee">
 <meta name="author" content="${SITE.nutri} — ${SITE.crn}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -159,6 +166,7 @@ function footer(r) {
         <ul>
           <li><a href="${WA}" target="_blank" rel="noopener">WhatsApp <span class="nowrap">${SITE.whatsappLabel}</span></a></li>
           <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
+          <li><a href="${IG}" target="_blank" rel="noopener me">Instagram @${SITE.instagram}</a></li>
         </ul>
       </div>
       <div>
@@ -371,6 +379,7 @@ const ORG = {
   slogan: "Nutrição em cada fase da menopausa",
   areaServed: [{ "@type": "City", name: "Florianópolis" }, { "@type": "Country", name: "Brasil" }],
   founder: { "@id": SITE.url + "/nutricionista/#osana" },
+  ...(SITE.sameAs.length ? { sameAs: SITE.sameAs } : {}),
   knowsAbout: ["Nutrição na menopausa", "Climatério", "Perimenopausa", "Pós-menopausa", "Hipotireoidismo", "Tireoidite de Hashimoto", "Doença de Graves", "Bioimpedância", "Emagrecimento"],
 };
 const PERSON = {
@@ -1060,8 +1069,14 @@ ${pageHero({ eyebrow: "Contato", title: "Agende sua <em>consulta</em>.", lead: "
     <a class="contact-card" href="mailto:${SITE.email}" data-reveal>
       <span class="contact-card__icon">${I.mail}</span>
       <span class="contact-card__label">E-mail</span>
-      <span class="contact-card__value">${SITE.email}</span>
+      <span class="contact-card__value">${SITE.email.replace("@", "@<wbr>")}</span>
       <span class="contact-card__go">Enviar mensagem ${I.arrow}</span>
+    </a>
+    <a class="contact-card" href="${IG}" target="_blank" rel="noopener me" data-reveal>
+      <span class="contact-card__icon">${I.insta}</span>
+      <span class="contact-card__label">Instagram</span>
+      <span class="contact-card__value">@${SITE.instagram}</span>
+      <span class="contact-card__go">Seguir no Instagram ${I.arrow}</span>
     </a>
   </div>
 </section>
