@@ -17,6 +17,10 @@ export const SITE = {
   whatsapp: "5548991232141",          // formato internacional, só números
   whatsappLabel: "(48) 99123-2141",
   waText: "Olá, Osana! Vim pelo site da NutriCiclos e gostaria de agendar uma consulta.",
+  // Google Search Console: cole aqui só o código da tag "google-site-verification" (o valor de content="...").
+  googleVerification: "",
+  // Perfis oficiais (Instagram, Perfil de Empresa no Google etc.). Ajudam o Google a ligar o site às redes.
+  sameAs: [],
 };
 const WA = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.waText)}`;
 const VERSION = Date.now().toString(36);
@@ -81,7 +85,7 @@ function head(p, r) {
 <title>${p.title}</title>
 <meta name="description" content="${p.description}">
 ${p.noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url}">`}
-<meta name="theme-color" content="#faf5ee">
+${SITE.googleVerification ? `<meta name="google-site-verification" content="${SITE.googleVerification}">\n` : ""}<meta name="theme-color" content="#faf5ee">
 <meta name="author" content="${SITE.nutri} — ${SITE.crn}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -371,6 +375,7 @@ const ORG = {
   slogan: "Nutrição em cada fase da menopausa",
   areaServed: [{ "@type": "City", name: "Florianópolis" }, { "@type": "Country", name: "Brasil" }],
   founder: { "@id": SITE.url + "/nutricionista/#osana" },
+  ...(SITE.sameAs.length ? { sameAs: SITE.sameAs } : {}),
   knowsAbout: ["Nutrição na menopausa", "Climatério", "Perimenopausa", "Pós-menopausa", "Hipotireoidismo", "Tireoidite de Hashimoto", "Doença de Graves", "Bioimpedância", "Emagrecimento"],
 };
 const PERSON = {
