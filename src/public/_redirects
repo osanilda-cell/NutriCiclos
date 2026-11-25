@@ -5,3 +5,6 @@ https://www.nutriciclos.com.br/*  https://nutriciclos.com.br/:splat  301!
 /a-nutricionista  /nutricionista/  301
 /servicos.html    /servicos/       301
 /contato.html     /contato/        301
+# atalhos para as redes sociais
+/facebook   https://www.facebook.com/profile.php?id=61596636252210  302
+/instagram  https://www.instagram.com/nutriciclos.nutri/              302
